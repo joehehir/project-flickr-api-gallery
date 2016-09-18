@@ -1,0 +1,274 @@
+@font-face{ /* font can be downloaded here: http://font.ubuntu.com/download/ubuntu-font-family-0.83.zip  */
+	font-family:ubuntu-regular;
+	src:url(../../font/ubuntu-font-family-0.83/Ubuntu-R.ttf);
+}
+
+body, input{
+	background-color:#FFFFFF;
+	font-family:ubuntu-regular, Arial, Helvetica, sans-serif;
+	color:#333333;
+}
+
+#content{
+	width:80%;
+	margin:auto;
+}
+
+aside{
+	float:left;
+	width:190px;
+}
+
+main{
+	position:relative;
+	float:left;
+	overflow:hidden;
+	width:calc(100% - 190px);
+	height:600px;
+	background-color:#c6c6c6;
+}
+
+.slides{
+	margin:0;
+	padding:0;
+	max-height:100%;
+	margin-right:40px;
+}
+
+#large-frame{
+	position:relative;
+	top:160px;
+	width:100%;
+	height:calc(100% - 160px);
+}
+
+.large-img{
+	position:relative;
+	transform:translate(-50%, -50%);
+	top:50%;
+	left:50%;
+	resize:both;
+	overflow:auto;
+}
+
+.large-taller{
+	height:90%;
+}
+
+.large-wider{
+	/* placeholder */
+	height:90%;
+}
+
+#lefty{
+	left:0;
+}
+
+#righty{
+	right:0;
+}
+
+.fade-ctrl{
+	position:absolute;
+	top:0;
+	height:160px;
+	line-height:160px;
+	padding:0 10px;
+	color:#FFFFFF;
+	font-size:2.4em;
+	background-color:#333333;
+	opacity:0.5;
+	transition:opacity .25s ease-in-out;
+	-moz-transition:opacity .25s ease-in-out;
+	-webkit-transition:opacity .25s ease-in-out;
+	cursor:pointer;
+	-webkit-touch-callout:none; /* iOS Safari */
+	-webkit-user-select:none;   /* Chrome/Safari/Opera */
+	-khtml-user-select:none;    /* Konqueror */
+	-moz-user-select:none;      /* Firefox */
+	-ms-user-select:none;       /* IE/Edge */
+	user-select:none;
+}
+
+.fade-ctrl:hover {
+	opacity:0.85;
+}
+
+#outer-slide{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:160px;
+	background-color:#d5d5d5;
+}
+
+#inner-slide{
+	position:absolute;
+	top:10px;
+	height:140px;
+	white-space:nowrap;
+	overflow:hidden;
+}
+
+#inner-slide img:not(.active){
+	opacity:0.50;
+}
+
+.active{
+	opacity:1;
+}
+
+.btn{
+	border:none;
+	outline:none;
+	color:#333333;
+	margin:0.5em;
+	padding:3px 6px;
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px;
+	border-radius:2px;
+	-webkit-box-shadow:0px 2px 0px #999999;
+	-moz-box-shadow:0px 2px 0px #999999;
+	box-shadow:0px 2px 0px #999999;
+	background:none repeat scroll 0% 0% #CCCCCC;
+	cursor:pointer;
+	-webkit-touch-callout:none; /* iOS Safari */
+	-webkit-user-select:none;   /* Chrome/Safari/Opera */
+	-khtml-user-select:none;    /* Konqueror */
+	-moz-user-select:none;      /* Firefox */
+	-ms-user-select:none;       /* IE/Edge */
+	user-select:none;
+}
+
+.btn:active{
+	border:none;
+	outline:none;
+	color:#FFFFFF;
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px;
+	border-radius:2px;
+	background:none repeat scroll 0% 0% #CCCCCC;
+}
+
+.btn:focus{
+	border:none;
+	outline:none;
+	color:#333333;
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px;
+	border-radius:2px;
+	background:none repeat scroll 0% 0% #CCCCCC;
+}
+
+.btn:hover{
+	border:none;
+	outline:none;
+	color:#333333;
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px;
+	border-radius:2px;
+	background:none repeat scroll 0% 0% #CCCCCC;
+}
+
+#search{
+	-webkit-box-shadow:0px 2px 0px #426BDD;
+	-moz-box-shadow:0px 2px 0px #426BDD;
+	box-shadow:0px 2px 0px #426BDD;
+	background:none repeat scroll 0% 0% #42B8DD;
+}
+
+.search-field{
+	text-align:left;
+	width:140px;
+	height:26px;
+	background:#FFFFFF;
+	border:2px solid #CCCCCC;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	border-radius:3px;
+	padding-top:2px;
+	padding-left:0.5em;
+}
+
+.loading{
+	position:relative;
+	color:transparent !important;
+	text-shadow:none !important;
+}
+
+.loading:before{
+	content:'';
+	display:inline-block;
+	position:absolute;
+	background:transparent;
+	border:2px solid #FFFFFF;
+	border-top-color:transparent;
+	border-bottom-color:transparent;
+	border-left-color:#333333;
+	border-right-color:#333333;
+	border-radius:50%;
+	box-sizing:border-box;
+	top:50%;
+	left:50%;
+	margin-top:-8px;
+	margin-left:-8px;
+	width:16px;
+	height:16px;
+	-webkit-animation:load 1.4s ease-in-out infinite;
+	-moz-animation:load 1.4s ease-in-out infinite;
+	-o-animation:load 1.4s ease-in-out infinite;
+	animation:load 1.4s ease-in-out infinite;
+}
+
+.big-loader:before{
+	margin-top:-15px;
+	margin-left:-15px;
+	width:30px;
+	height:30px;
+}
+
+@-webkit-keyframes load{
+	0%{
+		transform:rotate(0deg);
+	}
+	50%{
+		transform:rotate(180deg);
+	}
+	100%{
+		transform:rotate(360deg);
+	}
+}
+@-moz-keyframes load{
+	0%{
+		transform:rotate(0deg);
+	}
+	50%{
+		transform:rotate(180deg);
+	}
+	100%{
+		transform:rotate(360deg);
+	}
+}
+@-o-keyframes load{
+	0%{
+		transform:rotate(0deg);
+	}
+	50%{
+		transform:rotate(180deg);
+	}
+	100%{
+		transform:rotate(360deg);
+	}
+}
+@keyframes load{
+	0%{
+		transform:rotate(0deg);
+	}
+	50%{
+		transform:rotate(180deg);
+	}
+	100%{
+		transform:rotate(360deg);
+	}
+}
